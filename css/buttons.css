@@ -1,0 +1,17 @@
+
+.button-position{
+    position: absolute;
+    bottom: -20rem;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+.orange-btn{
+    color: var(--orange);
+    background-image: none;
+    background-color: unset;
+    border: 2px solid var(--orange);
+    border-radius: 50px;
+    padding: 15px 20px;
+    font-size: 1.4rem;
+}
