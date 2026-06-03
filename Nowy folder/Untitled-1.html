@@ -1,0 +1,214 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+    /*
+        .content{
+            width: 60%;
+            margin: 0px auto;
+        }
+
+        :root {
+
+            fonts
+            --font-large: 24px;
+            --font-medium: 20px;
+            --font-regular: 16px;
+
+            colors
+            --red: #c82909;
+            --green: #66cc00;
+            --mint: #66cc66;
+            --turquoise: #66cccc;
+            --blue: #99ccff;
+            --white: #ffffff;
+        }
+
+        h1{
+            font-size: var(--font-large);
+        }
+
+        h2{
+            font-size: var(--font-medium);
+        }
+
+        fieldset {
+            border: 1px solid rgb(184, 184, 184);
+            padding: 30px;;
+        }
+
+        .flex{
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: flex-start;
+            flex-direction: row;
+            padding: 10px 0px;
+        }
+
+        section div{
+            padding: 0px 15px 0px 0px;
+        }
+
+        section div label{
+            padding: 0px 5px 0px 0px;
+        }
+
+        textarea{
+            width: 100%;
+        }
+
+        table{
+            margin: 10px 0px;
+        }
+
+        table tr th{
+            width: 30px;
+            height: 30px;
+        }
+
+        table tr th{
+            background-color: var(--white);
+        }
+
+        table tr:nth-child(1) th:nth-child(1){            
+            background-color: var(--red);
+        }
+
+        table tr:nth-child(2) th:nth-child(2){           
+            background-color: var(--green);
+        }
+        table tr:nth-child(2) th:nth-child(3){           
+            background-color: var(--mint);
+        }
+        table tr:nth-child(2) th:nth-child(4){           
+            background-color: var(--turquoise);
+        }
+        table tr:nth-child(2) th:nth-child(5){           
+            background-color: var(--blue);
+        }
+        */
+
+    </style>
+</head>
+
+
+<body>
+    
+<header  class="content">
+    <nav>
+        <a href="/">Strona główna</a>
+    </nav>
+</header>
+
+<main class="content">
+
+    <article>
+        <table>
+            <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+            <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+        </table>
+        <h1>Kontakt</h1>
+         <h2>Masz pytania lub chcesz nawiązać współpracę? </h2>
+        <p>Skontaktuj się z nami — odpowiemy tak szybko, jak to możliwe:</p>
+        
+        <ul>
+            <li>Potrzebujesz indywidualnej wyceny projektu,</li>
+            <li>Masz pytania dotyczące naszych usług,</li>
+            <li>Chcesz rozpocząć współpracę?</li>
+        </ul>
+    </article>
+
+    <aside id="contact-form">
+
+        <div>
+
+            <div class="contact">
+
+                <div>
+                    <form action="/wyslij-formularz" method="post" autocomplete="off">
+                        <fieldset>
+                             <legend>Wypełnij formularz kontaktowy</legend>
+
+                            <section>
+
+                                <select id="country" name="country">
+                                    <option value="" disabled selected hidden>-- Wybierz temat --</option>
+                                    <option value="polska">Współpraca</option>
+                                    <option value="niemcy">Nasze produkty</option>
+                                    <option value="czechy">Inne</option>
+                                </select>
+                      
+                            </section>
+
+                            <section class="flex">
+                                <div>
+                                    <label for="name">Imię</label> 
+                                    <input id="name"  type="text" name="firstname" required aria-required="true" autofocus>
+                                </div>
+
+                                <div>
+                                    <label for="surname">Nazwisko</label> 
+                                    <input id="surname" type="text" name="lastname"><br>
+                                </div>
+                            </section>
+
+                            <section>
+                                <textarea id="message" name="message" rows="5" placeholder="Wiadomość" maxlength="1000" required aria-required="true"></textarea>
+                            </section>
+
+                            <section>
+                                <div>
+                                    
+                                    <label for="consent">
+                                        Akceptuję <a href="#">politykę prywatności</a>.
+                                    </label>
+
+                                    <input type="checkbox" id="consent" name="consent" required>
+                                </div>
+                            </section>
+
+                            <section class="flex">
+                                <div><input type="submit" value="Wyślij"></div>
+                                <div><input type="reset" value="Resetuj"></div>
+                            </section>
+
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </aside>
+</main>
+
+<footer class="content">
+
+    <p>Projektowanie graficzne i strony internetowe. Tworzymy unikalne projekty dopasowane do Twoich potrzeb.</p>
+</footer>
+
+
+
+</body>
+</html>
+

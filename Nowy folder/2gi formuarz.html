@@ -1,0 +1,121 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+    
+<header  class="content">
+    <nav>
+        <a href="/">Strona główna</a>
+    </nav>
+</header>
+
+<main class="content">
+
+    <article>
+        <table>
+            <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+            <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+        </table>
+        <h1>Kontakt</h1>
+         <h2>Masz pytania lub chcesz nawiązać współpracę? </h2>
+        <p>Skontaktuj się z nami — odpowiemy tak szybko, jak to możliwe:</p>
+        
+        <ul>
+            <li>Potrzebujesz indywidualnej wyceny projektu,</li>
+            <li>Masz pytania dotyczące naszych usług,</li>
+            <li>Chcesz rozpocząć współpracę?</li>
+        </ul>
+    </article>
+
+    <aside id="contact-form">
+
+        <div>
+
+            <div class="contact">
+
+                <div>
+                    <form action="/wyslij-formularz" method="post" autocomplete="off">
+                        <fieldset>
+                             <legend>Wypełnij formularz kontaktowy</legend>
+
+                            <section>
+
+                                <select id="country" name="country">
+                                    <option value="" disabled selected hidden>-- Wybierz temat --</option>
+                                    <option value="polska">Współpraca</option>
+                                    <option value="niemcy">Nasze produkty</option>
+                                    <option value="czechy">Inne</option>
+                                </select>
+                      
+                            </section>
+
+                            <section class="flex">
+
+                                    <label for="name">Imię</label> 
+                                    <input id="name"  type="text" name="firstname" required aria-required="true" autofocus>
+
+                                    <label for="surname">Nazwisko</label> 
+                                    <input id="surname" type="text" name="lastname"><br>
+        
+                            </section>
+
+                            <section>
+                                <textarea id="message" name="message" rows="5" placeholder="Wiadomość" maxlength="1000" required aria-required="true"></textarea>
+                            </section>
+
+                            <section>
+                                <div>
+                                    
+                                    <label for="consent">
+                                        Akceptuję <a href="#">politykę prywatności</a>.
+                                    </label>
+
+                                    <input type="checkbox" id="consent" name="consent" required>
+                                </div>
+                            </section>
+
+                            <section class="flex">
+                                <input type="submit" value="Wyślij">
+                                <input type="reset" value="Resetuj">
+                            </section>
+
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </aside>
+</main>
+
+<footer class="content">
+
+</footer>
+
+
+
+</body>
+</html>
+

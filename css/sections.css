@@ -1,12 +1,41 @@
 section:nth-child(even) { background-color: var(--orange)}
 section:nth-child(odd) { background-color: var(--white) }
 
+/*Przewijanie strony*/
 
+    section {
+        width: 100%;
+        height: 100vh;
+        font-weight: bold;
+    }
 
-
+        @media screen and (min-width: 2560px) {
+            section {
+                height: 50vh;
+            }
+            
+        }
 
 
 /*MAIN*/
+
+#home{
+    display: flex;
+    justify-content: center;
+}
+
+    .home__flex{
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        gap: 20px;
+        color: var(--orange);
+        font-weight: bold;
+        text-align: center;
+    }
 
 /*LOGO*/
 
@@ -15,14 +44,12 @@ section:nth-child(odd) { background-color: var(--white) }
     align-items: center;
     justify-content: space-evenly;
 
-    position: relative;
-
     text-align: center;
-     ackground: linear-gradient(to bottom, #db7f37 0%, #cf6f2d 100%);
+     background: linear-gradient(to bottom, #db7f37 0%, #cf6f2d 100%);
 
-    /*bbackground: 
+    background: 
         linear-gradient(to bottom, #db7f37 0%, #cf6f2d 100%),
-        url('/images/noise-lines.png');*/
+        url('/images/noise-lines.png');
     background-blend-mode: overlay;
     
 
@@ -33,39 +60,47 @@ section:nth-child(odd) { background-color: var(--white) }
     color: var(--white);
     margin-bottom: 50px;
     font-size: var(--font-big-hero);
-    
 }
 
 /*WWW*/
 
-#carusel-website div{
-    height: 100vh;
-    width: 100vw;
+#carusel-website{
+    text-align: center;
+    display: flex;
+    justify-content: center;
 }
+
 
 /*KONTAKT*/
 
 .contact{
-    width: 100%;;
+    width: 100%;
     display: flex;
+    column-count: 2;
     flex-direction: row;
     flex-wrap: wrap;
-    align-items: flex-start;
-    height: calc(100vh - 10rem);
+    height: calc(100vh - 3rem);
 }
 
-.contact div {
-    padding-top: 25vh;
-    padding-left: 10rem;
-    height: 100vh;
-}
+    .contact>div {
+        flex: 1;
+        background: var(--white);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 
-.contact div:nth-child(1){
-    background-color: var(--white);
-    width: 50vw;
-}
+    .contact div:last-child{
+        flex: 1;
+        background: var(--orange);
+    }
 
 
 footer{
-    height: 10rem;
+    background: var(--black);
+    color: var(--white);
+    padding: 1rem 0;
+    text-align: center;
+    height: 3rem;
 }

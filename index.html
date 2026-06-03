@@ -7,12 +7,10 @@
     <title>LisDesign | Projektowanie graficzne i strony internetowe</title>
     
     <link rel="stylesheet" href="css\global.css">
-    <link rel="stylesheet" href="css\scroll.css">
-    <link rel="stylesheet" href="css\buttons.css">
     <link rel="stylesheet" href="css\menu.css">
     <link rel="stylesheet" href="css\sections.css">
-    <link rel="stylesheet" href="css\gallery-logo.css">
-    <link rel="stylesheet" href="css\carusel.css">
+    <link rel="stylesheet" href="css\logo_gallery.css">
+    <link rel="stylesheet" href="css\website_gallery.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,7 +34,7 @@
                 </li>
 
                 <li class="navigation__item">
-                    <a href="#website-gallery" class="navigation__link">Strony Internetowe</a>
+                    <a href="#slider-website" class="navigation__link">Strony Internetowe</a>
                 </li>
 
                 <li class="navigation__item">
@@ -54,24 +52,34 @@
         </nav>
     </header>
 
-    <div class="social-media">
-        <div class="fb"><img src="layout\icons\fb.png" alt=""></div>
-        <div class="ins"><img src="layout\icons\em.png" alt=""></div>
-        <div class="mail"><img src="layout\icons\ph.png" alt=""></div>
+
+    <div class="social-container">
+
+        <a href="https://www.facebook.com/Lisdesignpl" data-social="Facebook" style="--accent-color: black;">
+        <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Facebook</title><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg>
+        </a>
+
+        <a href="mailto:lisdesign.pl@gmail.com" data-social="lisdesign.pl@gmail.com" style="--accent-color: black;">
+        <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>G-mail</title><path d="M15.61 12c0 1.99-1.62 3.61-3.61 3.61-1.99 0-3.61-1.62-3.61-3.61 0-1.99 1.62-3.61 3.61-3.61 1.99 0 3.61 1.62 3.61 3.61M12 0C5.383 0 0 5.383 0 12s5.383 12 12 12c2.424 0 4.761-.722 6.76-2.087l.034-.024-1.617-1.879-.027.017A9.494 9.494 0 0 1 12 21.54c-5.26 0-9.54-4.28-9.54-9.54 0-5.26 4.28-9.54 9.54-9.54 5.26 0 9.54 4.28 9.54 9.54a9.63 9.63 0 0 1-.225 2.05c-.301 1.239-1.169 1.618-1.82 1.568-.654-.053-1.42-.52-1.426-1.661V12A6.076 6.076 0 0 0 12 5.93 6.076 6.076 0 0 0 5.93 12 6.076 6.076 0 0 0 12 18.07a6.02 6.02 0 0 0 4.3-1.792 3.9 3.9 0 0 0 3.32 1.805c.874 0 1.74-.292 2.437-.821.719-.547 1.256-1.336 1.553-2.285.047-.154.135-.504.135-.507l.002-.013c.175-.76.253-1.52.253-2.457 0-6.617-5.383-12-12-12"/></svg>
+        </a>
+
+        <a href="tel:786819538" data-social="786-819-538" style="--accent-color: black;">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M224.2 89C216.3 70.1 195.7 60.1 176.1 65.4L170.6 66.9C106 84.5 50.8 147.1 66.9 223.3C104 398.3 241.7 536 416.7 573.1C493 589.3 555.5 534 573.1 469.4L574.6 463.9C580 444.2 569.9 423.6 551.1 415.8L453.8 375.3C437.3 368.4 418.2 373.2 406.8 387.1L368.2 434.3C297.9 399.4 241.3 341 208.8 269.3L253 233.3C266.9 222 271.6 202.9 264.8 186.3L224.2 89z"/></svg>
+
+        </a>
     </div>
 
 <div class="scroll-part">
 
     <section id="home">
         
-        <div style="position: relative;">
+        <div class="home__flex">
             <div> 
-                <img src="\layout\logo\LisDesign.png" alt="LisDesignLogo" srcset="">
+                <img src="/layout/logo/LisDesign.png" alt="LisDesignLogo" srcset="">
                 <h1>LisDesign.pl</h1>
-    
             </div>
 
-            <div class="button-position">
+            <div>
                 <button class="orange-btn">Zobacz&nbsp;portfolio</button>
             </div>
         </div>
@@ -89,16 +97,27 @@
     </section>
 
 
-    <section id="carusel-website background">
+    <section id="slider-website">
         
-        <div>
+        <div class="container-100 relative">
             <h2>Strony Internetowe</h2>
 
-            <div id="carusel__website-container">
-                Karuzela - carusel.css
+            <div id="slider__website-container" class="slider__website-container">
+                Karuzela - slider.css
+                
             </div>
 
-            
+            <!-- button prev and next -->
+                <div class="slider__website-changer">
+                    <button id="slider__website-prev">&#10094;</button>
+                    <button id="slider__website-next">&#10095;</button>
+                </div>
+
+            <!-- dots if 5 items => 5 dots -->
+                <ul class="dots">
+                    
+                </ul>
+
         </div>
 
     </section>
@@ -110,22 +129,68 @@
             <div class="contact">
                 <div>
                     <h2>O mnie</h2>
+                        <article>
+                        <p>
+                        LisDesign to mój cyfrowy świat: projekty graficzne i eksperymenty z kodem.
+                        Z wykształcenia jestem graficzką. Frontendu uczę się z pasji.
+                        </p>
+
+                        <p>HTML i CSS mam już w rękach, z JS-em jeszcze się siłuję, ale to jak wspinaczka</p>
+
+                        <p>-czasem spadasz, czasem boli, ale satysfakcja na szczycie jest tego warta :D</p>
+                        </article>
                 </div>
 
                 <div>
+
                     <h2>Kontakt</h2>
-                    <form>
-                        <label for="name">Imię</label><br>
-                        <input id="name"  type="text"><br>
-
-                        <label for="surname">Nazwisko</label><br>
-                        <input id="surname" type="text"><br>
+                    
+                    <form action="/" method="POST">
                         
-                        <label for="email">E-mail kontaktowy</label><br>
-                        <input name="email" type="email"><br>
+                    <div class="inputField">
+                        <input 
+                        type="text" 
+                        id="name" 
+                        minlength="3" 
+                        autocomplete="off"
+                        required>
+                        <label for="name">Imię</label>
+                    </div>
 
-                        <label for="message">Wiadomość</label><br>
-                        <input id="message" type="text"><br>
+                    <div class="inputField">
+                        <input 
+                        name="email" 
+                        type="email"
+                        autocomplete="off"
+                        required>
+                        <label for="email">E-mail kontaktowy</label>
+                    </div>
+
+                    <div class="inputField">
+                        <input 
+                        id="phone"
+                        name="phone" 
+                        type="tel"
+                        pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}"
+                        placeholder="(+48) 123 123 123"
+                        autocomplete="off"
+                        >
+                        <label for="phone">Telefon</label>
+                    </div>
+
+                    <div class="inputField">   
+                        <textarea
+                        id="message" 
+                        type="text"
+                        maxlength="500" 
+                        autocomplete="off"
+                        rows="4"
+                        required></textarea>
+                        <label for="message">Wiadomość</label>
+                    </div>
+
+                    <input type="submit" value="Wyślij" />
+
                     </form>
                 </div>
             </div>
@@ -139,10 +204,10 @@
     </section>
 </div>
 
-    <script src="js\LisDesign.js"></script>
-    <script src="js\menu.js"></script>
-    <script src="js\gallery.js"></script>
-    <script src="js\carusel.js"></script>
+    <script src="js/LisDesign.js" defer></script>
+    <script src="js/menu.js"></script>
+    <script src="js/gallery.js"></script>
+    <script src="js/website_gallery.js"></script>
 
     
 </body>

@@ -13,7 +13,6 @@ html, body {
     overflow: hidden;
 }
 
-
 :root {
 
     /*index*/
@@ -24,43 +23,177 @@ html, body {
     /*colors*/
     --orange: #db7f37;
     --white: #ffffff;
+    --black: #000;
 
     /*fonty*/
-    --font-regular: clamp(0.875rem, 2vw, 1rem);
-    --font-medium: clamp(1rem, 2.5vw, 1.5rem);
-    --font-large: clamp(1.5rem, 3vw, 2rem);
-    --font-hero: clamp(12rem, 15vw, 2.5rem);
-    --font-big-hero: clamp(2.5rem, 5vw, 5rem);
 
-    --thin: 300;
-    --regular: 400;
-    --medium: 500;
-    --demi-bold: 600;
-    --bold: 700;
+        /*paragrafy*/
+        --font-regular: 1.25rem;
 
 
-}
+        /*nagłówki*/
+        --font-medium: clamp(1rem, 2.5vw, 1.5rem);
+        --font-large: clamp(1.5rem, 3vw, 2rem);
+        --font-hero: clamp(1.2rem, 15vw, 2.5rem);
+        --font-big-hero: clamp(2.5rem, 5vw, 5rem);
 
-h1 {
-    font-size: var(--font-large);
+        --thin: 300;
+        --regular: 400;
+        --medium: 500;
+        --semi-bold: 600;
+        --bold: 700;
+    }
+
+    
+        @media screen and (max-width: 3800px) {
+            
+        }
+    
+        @media screen and (max-width: 2400px) {
+            
+        }
+
+        @media screen and (max-width: 1980px) {
+            
+        }
+
+        @media screen and (max-width: 1024px) {
+            
+        }
+
+        @media screen and (max-width: 768px) {
+            
+        }
+
+        @media (max-width: 480px) {
+
+    }
+
+    .bold {
+        font-weight: var(--bold);
+    }
+
+    h1 {
+        font-size: var(--font-large);
+        font-weight: var(--semi-bold);
+        letter-spacing: 1px;
+    }
+
+    h2 {
+        font-size: var(--font-large);
+    }
+
+    h3 {
+        font-size: var(--font-medium);
+    }
+
+    p {
+        font-size: var(--font-regular);
+        font-weight: var(--thin);
+    }
+
+    .container-100{
+        width: 100%;
+        max-width: 2560px;
+    }
+
+
+
+
+/*relative / absolute */
+
+    .relative {
+        position: relative;
+    }
+
+    .absolute {
+        position: absolute;
+    }
+
+/*Buttons*/
+
+    .orange-btn{
+        color: var(--orange);
+        background-image: none;
+        background-color: unset;
+        border: 2px solid var(--orange);
+        border-radius: 50px;
+        padding: 15px 20px;
+        font-size: 1.4rem;
+    }
+
+
+/*Forms*/
+
+form{
+    text-align: center;
     font-weight: var(--thin);
 }
 
-h2 {
-    font-size: var(--font-large);
-    /*text-transform: uppercase;*/
+.inputField {
+  position: relative;
+  margin: 20px;
 }
 
-h3 {
-    font-size: var(--font-medium);
+.inputField input, .inputField textarea{
+  width: 22rem;
+  height: 3.5rem;
+  border-radius: 5px;
+  font-size: 18px;
+  padding: 0 1rem;
+  border:  1px solid white;
+  background:  transparent;
+  outline: none;
+  color: var(--white);
 }
 
-p {
-    font-size: var(--font-reguler);
+.inputField label{
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  color: var(--white);
+  font-size: 1.1rem;
+  pointer-events: none;
+  transition: 0.3s;
 }
 
-.container-100{
-    width: 100%;
+    .inputField label::after {
+        content: "*";
+        color: var(--white);
+        margin-left: 3px;
+        display: none;
+    }
+
+    .inputField input:required ~ label::after,
+    .inputField textarea:required ~ label::after {
+    display: inline;
+    }
+
+input:focus, input:valid, textarea:focus, textarea:valid{
+  border: 1px solid white;
+}
+
+input:focus ~ label, input:valid ~ label, 
+textarea:focus ~ label, textarea:valid ~ label{
+  top: 0;
+  font-size: 0.9rem;
+  padding: 0 10px;
+  background: var(--orange);
+  color: white;
 }
 
 
+.inputField input::placeholder,
+.inputField textarea::placeholder {
+  color: var(--white);
+  opacity: 0.2;
+}
+
+.inputField textarea {
+
+  min-height: 6rem;     /* większe pole */
+  padding: 1rem 1rem 1rem 1rem; /* ↑ więcej miejsca od góry */
+  resize: vertical;      /* pozwala użytkownikowi zmieniać wysokość */
+  line-height: 1.5;      /* odstęp między liniami */
+}

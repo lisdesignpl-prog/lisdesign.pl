@@ -35,3 +35,16 @@ document.querySelectorAll("a[href^='#']").forEach(anchor => {
         }
     });
 });
+
+
+//Formularze
+
+
+//Maska numeru
+const phoneInput = document.getElementById('phone');
+phoneInput.addEventListener('input', (e) => {
+  let x = e.target.value.replace(/\D/g, '').slice(0, 10);
+  e.target.value = x.replace(/(\d{3})(\d{3})(\d{0,4})/, function(_, a, b, c) {
+    return c ? `${a}-${b}-${c}` : b ? `${a}-${b}` : a;
+  });
+});
