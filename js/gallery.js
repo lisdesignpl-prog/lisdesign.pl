@@ -143,7 +143,17 @@ function openPopup(description, imageSrc) {
   const popupLogo = popup.querySelector('.gallery__popup-logo');
 
   popupDescription.innerHTML = description;
-  popupLogo.innerHTML = `<img src="${imageSrc}" alt="Logo">`;
+  popupLogo.innerHTML = '<div class="gallery-loader"></div>';
+
+  const img = new Image();
+
+  img.onload = () => {
+      popupLogo.innerHTML = '';
+      popupLogo.appendChild(img);
+  };
+
+  img.src = imageSrc;
+
   popup.classList.add('gallery__popup-active'); 
 
   window.addEventListener('keydown', closePopupOnEsc);
