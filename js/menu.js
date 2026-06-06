@@ -6,14 +6,39 @@
 // Sprawdzanie, w której zakładce obecnie jest użytkownik > podświetlenie odpowiedniej pozycji menu
 
 
-const burger = document.getElementById('burger'); 
-const panel = document.getElementById('navigation-list'); //wyszukaj element przez id
+const burger = document.getElementById('burger');
+const panel = document.getElementById('navigation-list');
 
-    burger.addEventListener('click', () => {
-        
-        burger.classList.toggle('burger-animation'); //dodaj klasę css
-        panel.classList.toggle('navigation--active'); //dodaj klasę css
-    });
+function openMenu() {
+    overlayOpen = true;
+
+    burger.classList.add('burger-animation');
+    panel.classList.add('navigation--active');
+
+}
+
+function closeMenu() {
+    overlayOpen = false;
+
+    burger.classList.remove('burger-animation');
+    panel.classList.remove('navigation--active');
+
+}
+
+burger.addEventListener('click', () => {
+
+    if (panel.classList.contains('navigation--active')) {
+        closeMenu();
+    } else {
+        openMenu();
+    }
+
+});
+
+// Zamknięcie po kliknięciu w link
+document.querySelectorAll('.navigation__link').forEach(link => {
+    link.addEventListener('click', closeMenu);
+});
 
 //https://codepen.io/Bilal1909/pen/KKdrmRP  <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<Animacja do podmianyS
 

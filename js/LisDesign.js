@@ -1,10 +1,10 @@
 //Przewijanie strony
 
-// Przewijanie strony
 
 let sections = document.querySelectorAll("section");
 let currentIndex = 0;
 let isScrolling = false;
+let overlayOpen = false;
 
 function scrollToSection(index) {
     if (index < 0 || index >= sections.length || isScrolling) return;
@@ -24,7 +24,7 @@ function scrollToSection(index) {
 // Kółko myszy
 
 document.addEventListener("wheel", (event) => {
-    if (isScrolling) return;
+    if (overlayOpen || isScrolling) return;
 
     if (event.deltaY > 0 && currentIndex < sections.length - 1) {
         scrollToSection(currentIndex + 1);
@@ -50,7 +50,7 @@ document.addEventListener(
 document.addEventListener(
     "touchend",
     (e) => {
-        if (isScrolling) return;
+        if (overlayOpen || isScrolling) return;
 
         touchEndY = e.changedTouches[0].clientY;
 

@@ -56,10 +56,7 @@ section:nth-child(odd) { background-color: var(--white) }
 }
 
 #logo-gallery h2{
-    /*text-align: center;*/
     color: var(--white);
-    margin-bottom: 50px;
-    font-size: var(--font-big-hero);
 }
 
 /*WWW*/

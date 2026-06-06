@@ -28,20 +28,24 @@ html, body {
     /*fonty*/
 
         /*paragrafy*/
-        --font-regular: 1.25rem;
+        --font-regular: 1.15rem;
 
 
         /*nagłówki*/
         --font-medium: clamp(1rem, 2.5vw, 1.5rem);
         --font-large: clamp(1.5rem, 3vw, 2rem);
-        --font-hero: clamp(1.2rem, 15vw, 2.5rem);
-        --font-big-hero: clamp(2.5rem, 5vw, 5rem);
+        --font-hero: clamp(2rem, 4vw, 2.5rem);
+        --font-big-hero: clamp(2.5rem, 10vw, 7rem);
 
         --thin: 300;
         --regular: 400;
         --medium: 500;
         --semi-bold: 600;
         --bold: 700;
+    }
+
+    .big-hero{
+        font-size: var(--font-big-hero);
     }
 
     
@@ -67,7 +71,7 @@ html, body {
 
         @media (max-width: 480px) {
 
-    }
+        }
 
     .bold {
         font-weight: var(--bold);
@@ -80,7 +84,7 @@ html, body {
     }
 
     h2 {
-        font-size: var(--font-large);
+        font-size: var(--font-hero);
     }
 
     h3 {
@@ -191,9 +195,8 @@ textarea:focus ~ label, textarea:valid ~ label{
 }
 
 .inputField textarea {
-
   min-height: 6rem;     /* większe pole */
-  padding: 1rem 1rem 1rem 1rem; /* ↑ więcej miejsca od góry */
+  padding: 1rem 1rem 1rem 1rem; /* więcej miejsca od góry */
   resize: vertical;      /* pozwala użytkownikowi zmieniać wysokość */
   line-height: 1.5;      /* odstęp między liniami */
 }

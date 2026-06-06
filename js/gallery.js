@@ -52,20 +52,25 @@ fetch('logo_gallery.html')
   
 // POPUP
 function openPopup(description, imageSrc) {
+  overlayOpen = true;
+
   const popup = document.getElementById('popup');
   const popupDescription = popup.querySelector('.gallery__popup-describe');
   const popupLogo = popup.querySelector('.gallery__popup-logo');
 
   popupDescription.innerHTML = description;
   popupLogo.innerHTML = `<img src="${imageSrc}" alt="Logo">`;
-  popup.classList.add('gallery__popup-active');
+  popup.classList.add('gallery__popup-active'); 
 
   window.addEventListener('keydown', closePopupOnEsc);
 }
 
 function closePopup() {
+  overlayOpen = false;
+  
   const popup = document.getElementById('popup');
   popup.classList.remove('gallery__popup-active');
+
 }
 
 function closePopupOnEsc(event) {
