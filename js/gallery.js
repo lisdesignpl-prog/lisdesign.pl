@@ -17,22 +17,105 @@ fetch('logo_gallery.html')
     clone.classList.add('gallery__logo-list-clone'); // opcjonalnie osobna klasa
     logoGallery.after(clone); // wstawiamy klon zaraz po oryginale, w tej samej linii
 
+    // Nieskończone przewijanie
+
+    const originalWidth = logoGallery.scrollWidth;
+          // Startujemy od środka
+    container.scrollLeft = originalWidth;
+
     // Poprawne wyliczanie całkowitej szerokości elementu (z marginami)
     const itemStyle = getComputedStyle(item);
     const itemMargin = parseInt(itemStyle.marginLeft) + parseInt(itemStyle.marginRight);
     const itemWidth = item.offsetWidth + itemMargin;
 
+    // Pauzowanie animacji podczas interakcji
+    function pauseAnimation() {
+
+    logoGallery.classList.add('gallery-paused');
+    clone.classList.add('gallery-paused');
+
+    clearTimeout(window.galleryPauseTimeout);
+
+    window.galleryPauseTimeout = setTimeout(() => {
+        logoGallery.classList.remove('gallery-paused');
+        clone.classList.remove('gallery-paused');
+    }, 3000);
+  }
+
+  // Przeciąganie galerii myszką
+
+    let isDragging = false;
+    let dragMoved = false;
+    let startX;
+    let scrollStart;
+
+    container.addEventListener('mousedown', (e) => {
+
+        isDragging = true;
+        dragMoved = false;
+
+        startX = e.pageX;
+        scrollStart = container.scrollLeft;
+
+        pauseAnimation();
+
+    });
+
+    container.addEventListener('mousemove', (e) => {
+
+        if (!isDragging) return;
+
+        e.preventDefault();
+
+        const walk = e.pageX - startX;
+
+        if (Math.abs(walk) > 5) {
+            dragMoved = true;
+        }
+
+        container.scrollLeft = scrollStart - walk;
+
+    });
+
+    container.addEventListener('mouseup', () => {
+        isDragging = false;
+    });
+
+    container.addEventListener('mouseleave', () => {
+        isDragging = false;
+    });
+
     // Scrollowanie przyciskami
-    prevBtn.addEventListener('click', () => {
+    /*prevBtn.addEventListener('click', () => {
       container.scrollLeft -= itemWidth;
     });
 
     nextBtn.addEventListener('click', () => {
       container.scrollLeft += itemWidth;
-    });
+    }); */
+
+
+    container.addEventListener('scroll', () => {
+
+    pauseAnimation();
+
+    // Zapętlenie przewijania
+
+    if (container.scrollLeft >= originalWidth * 2) {
+        container.scrollLeft -= originalWidth;
+    }
+
+    if (container.scrollLeft <= 0) {
+        container.scrollLeft += originalWidth;
+    }
+
+   });
 
     // Klikanie w logo - otwieranie popupu
     container.addEventListener('click', function (event) {
+
+      if (dragMoved) return;
+
       const clickedItem = event.target.closest('.gallery__logo-item');
       if (!clickedItem) return;
 
@@ -42,6 +125,7 @@ fetch('logo_gallery.html')
       openPopup(description, imageSrc);
     });
   })
+
   .catch(error => {
     console.error('Błąd wczytywania galerii:', error);
     alert('Błąd ładowania galerii – sprawdź konsolę');
@@ -67,7 +151,7 @@ function openPopup(description, imageSrc) {
 
 function closePopup() {
   overlayOpen = false;
-  
+
   const popup = document.getElementById('popup');
   popup.classList.remove('gallery__popup-active');
 
