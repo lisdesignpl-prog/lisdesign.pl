@@ -38,6 +38,9 @@
         justify-content: center;
 
         background-color: var(--orange);
+
+        font-size: 30px;
+        font-weight: 600;
     }
 
         .navigation__item {
