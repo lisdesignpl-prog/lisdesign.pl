@@ -22,6 +22,8 @@
     position: absolute;
     top: 0;
     left: 0;
+    width: 100%;
+    max-width: 2560px;
     height: 100%;
     display: flex;
     width: max-content;
@@ -29,18 +31,8 @@
 }
 
 
-    /*.slider__website-item img {
-        width: 100vw;
-        max-width: 100vw;
-        height: 100%;
-        object-fit: cover;
-    }*/
-
     .slider__website-item {
-        width: 100%;
-        max-width: 2560px;
-        flex-shrink: 0;
-
+        
         display: grid;
         grid-template-columns: 1fr 1fr;
     }
