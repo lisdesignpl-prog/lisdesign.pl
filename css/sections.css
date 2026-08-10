@@ -13,7 +13,6 @@ section:nth-child(odd) { background-color: var(--white) }
             section {
                 height: 50vh;
             }
-            
         }
 
 
