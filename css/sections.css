@@ -68,6 +68,7 @@ section:nth-child(odd) { background-color: var(--white) }
 }
 
 
+
 /*KONTAKT*/
 
 .contact{
@@ -101,3 +102,10 @@ footer{
     text-align: center;
     height: 3rem;
 }
+
+    @media screen and (min-width: 2560px) {
+
+        .contact {
+            height: calc(50vh - 3rem);
+        }
+    }

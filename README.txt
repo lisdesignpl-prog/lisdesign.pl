@@ -10,4 +10,4 @@ Portfolio frontendowe i graficzne.
 
 ## Autor
 
-LisDesign
+LisDesign.pl

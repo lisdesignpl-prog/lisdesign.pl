@@ -39,7 +39,7 @@ fetch('logo_gallery.html')
     window.galleryPauseTimeout = setTimeout(() => {
         logoGallery.classList.remove('gallery-paused');
         clone.classList.remove('gallery-paused');
-    }, 3000);
+    }, 500);
   }
 
   // Przeciąganie galerii myszką
