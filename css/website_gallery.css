@@ -40,13 +40,13 @@
         width: 100%;
         max-width: 2560px;
         flex-shrink: 0;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
     }
 
     .slider__website-item img {
-        /*width: 100%;
-        height: 100%;
-        object-fit: cover;*/
-        display: block;
+        max-width: 100%;
     }
 
 
